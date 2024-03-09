@@ -1,4 +1,4 @@
-# Born2beRoot
+# suBorn2beRoot
 
 # Descargar imagen del ISO, Debian
 
@@ -36,7 +36,7 @@
         Si quieres completar la primera parte del bono, debes ampliar el espacio predeterminado que proporciona VMware a 30GB. Puedes hacer esto ajustando la configuración de la aplicación antes de iniciarla.
         
     
-    ![Screen Shot 2024-03-06 at 11.53.00 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.53.00_AM.png)
+    ![Screen Shot 2024-03-06 at 11.53.00 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.53.00_AM.png)
     
 4. Elige el idioma inglés, el teclado y luego donde estás.
 5. Hostname:
@@ -84,7 +84,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
 4. Siguiendo en el usuario root crearemos un usuario con nuestro login con el comando `sudo adduser gusgonza` como nosotros ya hemos creado el usuario en la instalación nos debe aparecer que el usuario ya existe.
     
-    ![Screen Shot 2024-03-06 at 12.24.49 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.24.49_PM.png)
+    ![Screen Shot 2024-03-06 at 12.24.49 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.24.49_PM.png)
     
 5. Ahora deberemos crear un nuevo grupo llamado `user42`. Para crearlo debemos hacer `sudo addgroup user42`.
     
@@ -92,15 +92,15 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
     🤔 **Se ha creado correctamente el grupo?** Lo cierto es que sí, ya que no ha habido ningún mensaje de error, aun así podemos comprobar si se ha creado con el comando `getent group nombre_grupo` o también podemos hacer `cat /etc/group` y podremos ver todos los grupos y los usuarios que hay dentro de ellos.
     
-    ![Screen Shot 2024-03-06 at 12.26.56 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.26.56_PM.png)
+    ![Screen Shot 2024-03-06 at 12.26.56 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.26.56_PM.png)
     
 6. Con el comando `sudo adduser user group` incluiremos al usuario en el grupo. Debemos incluir al usuario en los grupos `sudo` y `user42`.
     
-    ![Screen Shot 2024-03-06 at 12.31.09 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.31.09_PM.png)
+    ![Screen Shot 2024-03-06 at 12.31.09 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.31.09_PM.png)
     
 7. Una vez los hayamos introducido para chequear que todo se haya hecho correctamente podemos ejecutar el comando `getent group nombre_grupo` o también podemos editar el fichero /etc/group `vim /etc/group` y en los grupos `sudo` y `login42` deberá aparecer nuestro usuario.
     
-    ![Screen Shot 2024-03-06 at 12.32.07 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.32.07_PM.png)
+    ![Screen Shot 2024-03-06 at 12.32.07 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.32.07_PM.png)
     
 
  **Instalación y configuración SSH 📶**
@@ -112,7 +112,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
     Para verificar que se instaló correctamente, ejecutaremos `sudo service ssh status`. Debería aparecer como activo.
     
-    ![Screen Shot 2024-03-06 at 12.34.33 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.34.33_PM.png)
+    ![Screen Shot 2024-03-06 at 12.34.33 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.34.33_PM.png)
     
 3. Tras finalizar la instalación, se crean algunos archivos que debemos configurar. Utilizaremos vim para esta tarea, que puedes instalar con `sudo apt install vim`. El primer archivo que editaremos será `/etc/ssh/sshd_config`. Si no estás utilizando el usuario root, no tendrás permisos de escritura. Para conseguirlos, puedes utilizar `su` e ingresar la contraseña para acceder al usuario root, o simplemente agregar sudo al principio del comando: `sudo vim /etc/ssh/sshd_config`.
 4. Los `#` al inicio de una línea indican que está comentada; debes eliminar este símbolo en las líneas que vayas a modificar. Al editar el archivo, debes cambiar las siguientes líneas:
@@ -123,13 +123,13 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
     Una vez que hayas hecho estas modificaciones, guarda los cambios y cierra el archivo.
     
-    ![Screen Shot 2024-03-06 at 12.40.39 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.40.39_PM.png)
+    ![Screen Shot 2024-03-06 at 12.40.39 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.40.39_PM.png)
     
 5. Ahora debemos editar el fichero  `vim /etc/ssh/ssh_config`.
     
     Editaremos la siguiente línea:
     
-    ![Screen Shot 2024-03-06 at 12.41.55 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.41.55_PM.png)
+    ![Screen Shot 2024-03-06 at 12.41.55 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.41.55_PM.png)
     
     ➤ #Port 22 -> Port 4242
     
@@ -145,7 +145,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
 1. Lo primero que debemos hacer es instalar UFW. Para ello, utilizaremos el comando `sudo apt install ufw`. A continuación, escribiremos una `y` para confirmar.
 2. Una vez instalado, debemos habilitarlo. Para ello, introduciremos el siguiente comando: `sudo ufw enable`. A continuación, nos debe indicar que el firewall está activo.
     
-    ![Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.52.46_PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.52.46_PM.png)
+    ![suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.52.46_PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.52.46_PM.png)
     
 3. Ahora debemos hacer que nuestro firewall permita las conexiones a través del puerto 4242. Lo haremos con el siguiente comando: `sudo ufw allow 4242`.
     
@@ -153,7 +153,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
 4. Por último, comprobaremos que está todo correctamente configurado mirando el estado de nuestro cortafuegos, en donde ya debe aparecer como permitidas las conexiones mediante el puerto 4242. Para ver el estado daremos uso del comando `sudo ufw status`.
     
-    ![Screen Shot 2024-03-06 at 1.31.55 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.31.55_PM.png)
+    ![Screen Shot 2024-03-06 at 1.31.55 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.31.55_PM.png)
     
 
 **Configurar contraseña fuerte para sudo 🔒**
@@ -161,7 +161,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
 1. Crearemos un fichero en la ruta /etc/sudoers.d/ a mi fichero yo le he decidido llamar sudo_config, ya que en ese fichero se almacenará la configuración de la contraseña. El comando exacto para crear el fichero es `touch /etc/sudoers.d/sudo_config`.
 2. Debemos crear el directorio sudo en la ruta /var/log porque cada comando que ejecutemos con sudo, tanto el input como el output, debe quedar almacenado en ese directorio. Para crearlo utilizaremos el comando `mkdir /var/log/sudo`.
     
-    ![Screen Shot 2024-03-06 at 1.34.17 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.34.17_PM.png)
+    ![Screen Shot 2024-03-06 at 1.34.17 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.34.17_PM.png)
     
 3. Debemos editar el fichero creado en el paso 1. Como he comentado anteriormente, puedes utilizar el editor que más te guste, pero yo haré uso de nano. Comando para editar el fichero: `vim /etc/sudoers.d/sudo_config`
 4. Una vez estamos editando el fichero deberemos introducir los siguientes comandos para cumplir todos los requisitos que pide él subject. en vin `yy` copia la linea y `p` pega en la siguiente línea.
@@ -178,7 +178,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
     ➤ Cómo debería verse el fichero.
     
-    ![Screen Shot 2024-03-06 at 1.51.44 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.51.44_PM.png)
+    ![Screen Shot 2024-03-06 at 1.51.44 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.51.44_PM.png)
     
     <aside>
     💡 **`passwd_tries=3`**: Limita el número de intentos de contraseña para autenticación.
@@ -301,13 +301,13 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
 1. Daremos click derecho sobre nuestra máquina y escogeremos la opción `Connect to SSH`.
 2. Una vez se nos abra la siguiente pestaña debemos rellenar todos los campos. En port debemos poner `4242` para indicar que queremos conectarnos por ese puerto. Los siguientes campos son el username de tu máquina, en mi caso `gusgonza` y la contraseña del usuario, en mi caso `Hello42spain`.
     
-    ![Screen Shot 2024-03-01 at 5.08.19 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-01_at_5.08.19_PM.png)
+    ![Screen Shot 2024-03-01 at 5.08.19 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-01_at_5.08.19_PM.png)
     
-    ![Screen Shot 2024-03-01 at 5.08.40 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-01_at_5.08.40_PM.png)
+    ![Screen Shot 2024-03-01 at 5.08.40 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-01_at_5.08.40_PM.png)
     
     También podemos conectarnos mediante el terminal, pero debemos sustituir localhost por la IP de la máquina virtual. Quedaría algo así: `ssh gusgonza@192.168.39.1 -p 4242`. para saber tu ip usa `hostname -I`
     
-    ![Screen Shot 2024-03-06 at 2.19.19 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_2.19.19_PM.png)
+    ![Screen Shot 2024-03-06 at 2.19.19 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_2.19.19_PM.png)
     
 
  **Script** 
@@ -322,7 +322,7 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
     
     Para poder ver la arquitectura del SO y su versión de kernel utilizaremos el comando `uname -a` ( "-a" == "--all" ) que básicamente printará toda la información, excepto si el tipo de procesador es desconocido o la plataforma de hardware
     
-    ![Screen Shot 2024-03-01 at 5.10.00 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-01_at_5.10.00_PM.png)
+    ![Screen Shot 2024-03-01 at 5.10.00 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-01_at_5.10.00_PM.png)
     
 2.  **Núcleos físicos**
     
@@ -330,7 +330,7 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
     
     La salida que has proporcionado indica que tienes un solo ID físico de CPU en tu sistema, ya que solo se muestra un resultado con "physical id: 0". Esto significa que hay un solo conjunto físico de procesadores en tu sistema.
     
-    ![Screen Shot 2024-03-06 at 3.23.28 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_3.23.28_PM.png)
+    ![Screen Shot 2024-03-06 at 3.23.28 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_3.23.28_PM.png)
     
 3. **Núcleos virtuales**
     
@@ -342,7 +342,7 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
     
     Esperamos obtener un número que represente la cantidad de procesadores lógicos disponibles en el sistema. 
     
-    ![Screen Shot 2024-03-06 at 3.26.31 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_3.26.31_PM.png)
+    ![Screen Shot 2024-03-06 at 3.26.31 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_3.26.31_PM.png)
     
 4. **Memoria RAM**
     
@@ -363,7 +363,7 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
         
         **`free --mega | awk '$1 == "Mem:" {printf("(%.2f%%)\n", $3/$2*100)}'`** 
         
-        ![Screen Shot 2024-03-06 at 3.59.04 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_3.59.04_PM.png)
+        ![Screen Shot 2024-03-06 at 3.59.04 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_3.59.04_PM.png)
         
 5. **Memoria del disco**
     
@@ -388,30 +388,39 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
         
         `df -m | grep "/dev/" | grep -v "/boot" | awk '{use += $3} {total += $2} END {printf("(%d%%)\n"), use/total*100}'` 
         
-        ![Screen Shot 2024-03-06 at 4.00.10 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_4.00.10_PM.png)
+        ![Screen Shot 2024-03-06 at 4.00.10 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_4.00.10_PM.png)
         
     4. **Porcentaje uso de CPU**
         
         **Uso de `vmstat` para ver el porcentaje de uso de CPU**:
         
+        **`vmstat`** es un comando utilizado en sistemas operativos Unix y Unix-like (como Linux) para monitorear y reportar estadísticas del sistema relacionadas con la memoria virtual, el procesamiento, la utilización de la CPU y la actividad de los discos. El nombre "vmstat" es una abreviatura de "Virtual Memory Statistics". Este comando proporciona una instantánea de varias métricas del sistema en un intervalo de tiempo específico.
+        
     - **`vmstat 1 4 | tail -1 | awk '{print $15}'`** muestra el porcentaje de uso de memoria disponible.
     - Luego, se resta este valor de 100 y se imprime el resultado con un decimal y un "%" al final, en el script.
-    1. **`vmstat 1 4`**: Este comando ejecuta el programa **`vmstat`**, que muestra estadísticas del sistema. El flag **`1`** establece un intervalo de actualización de 1 segundo, mientras que el **`4`** indica que se mostrarán los datos durante 4 iteraciones.
-    2. **`tail -1`**: Este comando muestra solo la última línea de la salida generada por **`vmstat`**. Como **`vmstat`** produce múltiples líneas de salida con datos en intervalos regulares, solo estamos interesados en la última línea, que contiene la información más reciente.
-    3. **`awk '{print $15}'`**: AWK es un programa de procesamiento de texto. En este caso, utilizamos AWK para extraer y mostrar solo el valor del decimoquinto campo de la última línea de la salida de **`vmstat`**. En el contexto de **`vmstat`**, el decimoquinto campo representa el porcentaje de uso de la CPU.
+        1. **`vmstat 1 4`**: Este comando ejecuta el programa **`vmstat`**, que muestra estadísticas del sistema. El flag **`1`** establece un intervalo de actualización de 1 segundo, mientras que el **`4`** indica que se mostrarán los datos durante 4 iteraciones.
+        2. **`tail -1`**: Este comando muestra solo la última línea de la salida generada por **`vmstat`**. Como **`vmstat`** produce múltiples líneas de salida con datos en intervalos regulares, solo estamos interesados en la última línea, que contiene la información más reciente.
+        3. **`awk '{print $15}'`**: AWK es un programa de procesamiento de texto. En este caso, utilizamos AWK para extraer y mostrar solo el valor del decimoquinto campo de la última línea de la salida de **`vmstat`**. En el contexto de **`vmstat`**, el decimoquinto campo representa el porcentaje de uso de la CPU.
         
         En resumen, este comando en su totalidad nos permite obtener el porcentaje de uso de la CPU en el sistema. Cada parte del comando cumple una función específica: **`vmstat`** recopila las estadísticas del sistema, **`tail -1`** selecciona solo la última línea de esa salida, y **`awk`** extrae el valor del campo que indica el porcentaje de uso de la CPU.
         
         `vmstat 1 4 | tail -1 | awk '{print $15}'`
         
-        ![Screen Shot 2024-03-06 at 4.00.51 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_4.00.51_PM.png)
+        ![Screen Shot 2024-03-06 at 4.00.51 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_4.00.51_PM.png)
         
 6. **Último reinicio**
     
+    El comando **`who`** en la terminal de Linux muestra una lista de usuarios actualmente conectados al sistema, junto con detalles como la terminal de sesión y la hora de inicio de sesión. Es útil para verificar quién está utilizando el sistema en un momento dado. Puedes usar el comando **`who`** sin argumentos para obtener una lista básica de usuarios conectados, o puedes agregar opciones como **`-b`** para mostrar la última hora de inicio del sistema, **`-u`** para información adicional sobre la actividad del usuario, o **`-q`** para mostrar solo el número de usuarios conectados.
     
-    `who -b | awk '$1 == "system" {print $3 " " $4}'`.
+    `who -b | awk '$1 == "system" {print $3 " " $4}'`
     
-    ![Screen Shot 2024-03-06 at 4.01.09 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_4.01.09_PM.png)
+    En la MV:
+    
+    ![Screen Shot 2024-03-08 at 10.31.00 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_10.31.00_AM.png)
+    
+    Por terminal conectado por ssh:
+    
+    ![Screen Shot 2024-03-06 at 4.01.09 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_4.01.09_PM.png)
     
 7. **Uso LVM**
     
@@ -435,10 +444,23 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
         5. **`else`**: Marca el inicio del bloque de comandos que se ejecutarán si la condición del **`if`** se evalúa como falsa.
         6. **`echo no`**: Imprime "no" en la salida estándar si LVM no está activo en el sistema.
         7. **`fi`**: Marca el final de la estructura de control condicional. Indica el final del bloque de comandos del **`if`**.
-    
-    En resumen, este comando permite determinar si LVM está activo en el sistema, mostrando "yes" si lo está y "no" si no lo está, facilitando así la verificación del estado de LVM en el sistema.
+            
+            ![Screen Shot 2024-03-08 at 10.24.43 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_10.24.43_AM.png)
+            
+        
+        En resumen, este comando permite determinar si LVM está activo en el sistema, mostrando "yes" si lo está y "no" si no lo está, facilitando así la verificación del estado de LVM en el sistema.
+        
+        - **PV (Physical Volume)**: Es un volumen físico, lo cual es un dispositivo de almacenamiento físico, como un disco duro o una partición de disco, que se utiliza como base para el almacenamiento en LVM (Logical Volume Management). En resumen, es una unidad física de almacenamiento que se integra en el sistema LVM.
+        - **LV (Logical Volume)**: Es un volumen lógico, creado dentro de un volumen físico (PV) o un conjunto de ellos. Los LVs son similares a las particiones de disco tradicionales, pero con ventajas adicionales. Se pueden redimensionar fácilmente, mover entre diferentes sistemas físicos y se pueden administrar de manera más flexible que las particiones tradicionales. Los LVs se utilizan como bloques de construcción para montar sistemas de archivos, volúmenes de intercambio (swap), entre otros usos de almacenamiento en Linux.
+        
+        En resumen, PVs son dispositivos de almacenamiento físico, mientras que LVs son volúmenes lógicos que se crean utilizando PVs. Juntos, forman la infraestructura de almacenamiento gestionada por LVM en sistemas Linux.
+        
     
 8. **Conexiones TCP**
+    
+    Las conexiones TCP (Transmission Control Protocol) son conexiones de red establecidas entre dos dispositivos en una red que utilizan el protocolo TCP para comunicarse entre sí de manera confiable y orientada a la conexión. TCP es uno de los protocolos fundamentales en el modelo de referencia de interconexión de sistemas abiertos (OSI), en la capa de transporte.
+    
+    Entonces: las conexiones TCP con SSH (Secure Shell) son conexiones de red establecidas utilizando el protocolo TCP y se emplean para establecer sesiones seguras entre dos dispositivos en una red.
     
     El comando **`ss -ta | grep ESTAB | wc -l`** se utiliza para contar el número de conexiones TCP establecidas en el sistema. Aquí está una explicación detallada de cada parte del comando:
     
@@ -447,6 +469,8 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
     3. **`wc -l`**: Este comando cuenta el número de líneas que se pasan a través de él. En este caso, contará el número de conexiones TCP establecidas que se han filtrado previamente.
     
     En resumen, el comando **`ss -ta | grep ESTAB | wc -l`** nos proporciona el número total de conexiones TCP establecidas en el sistema en un momento dado.
+    
+    ![Screen Shot 2024-03-08 at 10.38.10 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_10.38.10_AM.png)
     
 9. **Número de usuarios**
     
@@ -458,29 +482,42 @@ El uso de [WALL](https://aprendiendoausarlinux.wordpress.com/category/comandos-u
     
     En resumen, **`users | wc -w`** nos proporciona el número de usuarios que están actualmente conectados al sistema.
     
+    ![Screen Shot 2024-03-08 at 10.39.21 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_10.39.21_AM.png)
+    
 10. **Dirección IP y MAC**
-    1. **`ip link`**: Este comando muestra información sobre las interfaces de red del sistema.
-    2. **`|`**: Es un operador de tubería que redirige la salida del comando anterior como entrada al siguiente comando.
-    3. **`grep "link/ether"`**: Utilizamos **`grep`** para filtrar las líneas que contienen la cadena "link/ether", que es la línea que contiene la dirección MAC.
-    4. **`awk '{print $2}'`**: El comando **`awk`** se utiliza para procesar y manipular datos de texto. Con **`{print $2}`**, estamos especificando que solo queremos imprimir la segunda columna de la salida de **`grep`**, que es la dirección MAC.
+    1. Conseguir la dirección ip del dispositivo: `hostname -I`
+        
+        ![Screen Shot 2024-03-08 at 10.40.54 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_10.40.54_AM.png)
+        
+    2. **`ip link`**: Este comando muestra información sobre las interfaces de red del sistema.
+    3. **`|`**: Es un operador de tubería que redirige la salida del comando anterior como entrada al siguiente comando.
+    4. **`grep "link/ether"`**: Utilizamos **`grep`** para filtrar las líneas que contienen la cadena "link/ether", que es la línea que contiene la dirección MAC.
+    5. **`awk '{print $2}'`**: El comando **`awk`** se utiliza para procesar y manipular datos de texto. Con **`{print $2}`**, estamos especificando que solo queremos imprimir la segunda columna de la salida de **`grep`**, que es la dirección MAC.
     
     En resumen, el comando **`ip link | grep "link/ether" | awk '{print $2}'`** nos proporciona la dirección MAC de la interfaz de red del sistema.
+    
+    ![Screen Shot 2024-03-08 at 10.42.16 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_10.42.16_AM.png)
     
 11. **Número de comandos ejecutados con sudo**
     
     El comando **`journalctl _COMM=sudo | grep COMMAND | wc -l`** se utiliza para contar el número de comandos que se ejecutan con **`sudo`** y se registran en los registros del sistema. Aquí está una explicación detallada de cada parte del comando:
     
-    1. **`journalctl _COMM=sudo`**: Este comando **`journalctl`** se utiliza para mostrar y administrar los registros del sistema. Con **`_COMM=sudo`**, estamos filtrando los registros para mostrar solo aquellos relacionados con comandos ejecutados con **`sudo`**.
+    1. **`journalctl _COMM=sudo`**: Este comando **`journalctl`** se utiliza para mostrar y administrar los registros del sistema. 
+        
+        Con **`_COMM=sudo`**, estamos filtrando los registros para mostrar solo aquellos relacionados con comandos ejecutados con **`sudo`**.
+        
     2. **`|`**: Es un operador de tubería que redirige la salida del comando anterior como entrada al siguiente comando.
     3. **`grep COMMAND`**: Utilizamos **`grep`** para filtrar las líneas que contienen la palabra "COMMAND", lo que nos permite seleccionar solo las líneas que representan comandos ejecutados.
     4. **`wc -l`**: El comando **`wc`** (word count) se utiliza para contar las líneas en la entrada que recibe. Con el flag **`l`**, **`wc`** contará el número de líneas que se le pasan a través de la tubería.
     
     En resumen, el comando **`journalctl _COMM=sudo | grep COMMAND | wc -l`** nos proporciona el número total de comandos ejecutados con **`sudo`** y registrados en los registros del sistema.
     
+    ![Screen Shot 2024-03-08 at 11.21.26 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_11.21.26_AM.png)
+    
 12. Resultado del script
 
 ```bash
-#!/bin/bash
+##!/bin/bash
 
 # System Architecture
 architecture=$(uname -a)
@@ -606,7 +643,12 @@ wall "
 
 </aside>
 
-**Crontab ⏰**
+<aside>
+💡 **WALL:**  Envía un mensaje a todos los usuarios del sistema mostrando la información recopilada.
+
+</aside>
+
+# **Crontab ⏰**
 
 Para tener correctamente crontab configurado debemos editar el fichero crontab con el siguiente comando `sudo crontab -u root -e`.
 
@@ -631,13 +673,18 @@ Por ejemplo, la línea **`*/10 * * * * sh /ruta_del_script`** significa:
 - Se ejecuta cada 10 minutos (**`/10`**) en cualquier hora (**``**), cualquier día del mes (**``**), cualquier mes (**``**), y cualquier día de la semana (**``**).
 - El comando a ejecutar es **`sh /ruta_del_script`**, donde **`sh`** es el intérprete de comandos que se utilizará y **`/ruta_del_script`** es la ubicación del script que deseas ejecutar.
 
+<aside>
+💡 **`*/10`** indica que el comando debe ejecutarse en intervalos de 10 minutos. Si solo se pon, entonces se ejecutaría solo a los minutos 10 de cada hora.
+
+</aside>
+
 Al agregar esta línea al archivo crontab y guardar los cambios, el script se ejecutará automáticamente cada 10 minutos según la programación especificada.
 
-**Signature.txt**
+# **Signature.txt**
 
 Para garantizar la integridad de nuestros archivos, es esencial comprender cómo funcionan los comandos que utilizamos. Uno de ellos es **`shasum`**, una herramienta poderosa para verificar la integridad de los archivos mediante el cálculo de la suma de comprobación del hash SHA-1. Pero, ¿qué significa eso exactamente?
 
-Imagina que cada archivo tiene una huella digital única. Esta huella digital se calcula utilizando un algoritmo específico, en este caso, SHA-1. Cuando ejecutas **`shasum nombremaquina.vdi`**, estás instruyendo al sistema para que calcule la huella digital del archivo "nombremaquina.vdi" utilizando el algoritmo SHA-1.
+Imagina que cada archivo tiene una huella digital única. Esta huella digital se calcula utilizando un algoritmo específico, en este caso, SHA-1. Cuando ejecutas **`shasum nombremaquina.vmdk`**, estás instruyendo al sistema para que calcule la huella digital del archivo "Virtual Disk.vmdk" utilizando el algoritmo SHA-1.
 
 Esta huella digital, o firma, es como una firma única para ese archivo en particular. Si el contenido del archivo cambia, por más mínimo que sea, la firma también cambiará. Por lo tanto, al calcular la firma de un archivo en un momento específico, puedes estar seguro de que cualquier cambio en el archivo se reflejará en una firma diferente.
 
@@ -647,7 +694,87 @@ Una práctica recomendada para realizar correcciones sin comprometer la integrid
 
 En resumen, **`shasum`** es una herramienta valiosa que nos permite verificar la integridad de nuestros archivos mediante el cálculo de una firma única. Al comprender su funcionamiento y seguir buenas prácticas, podemos mantener la integridad de nuestros datos y archivos de manera efectiva.
 
-**BONUS-PARTICIONES**
+![Screen Shot 2024-03-09 at 1.32.24 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_1.32.24_PM.png)
+
+Esto debe de guardarse en el signature.txt que a su vez se debe subir al repositorio de entrega. 
+
+<aside>
+💡 Para hacer este paso la MV debe estar apagada y no volver a abrirlo hasta la evaluacióncha
+
+</aside>
+
+Clona tu MV para las tres evaluaciones y un 3 para que vayas testeando cosas sin tocar el original, con el comando
+
+ `cp -r Born2beroot.vmwarevm nombre_copy.vmwaremv`
+
+![Screen Shot 2024-03-09 at 4.04.58 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_4.04.58_PM.png)
+
+para comprobar el shasum seria de esta manera
+
+![Screen Shot 2024-03-09 at 4.06.38 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_4.06.38_PM.png)
+
+Tenemos que incluir estas MMVV en VMwatre. opcion de `window` → `virtual machine library` simplemente hacemos `open .` en donde comprobamos el `shasum` y arrastramos a la ventana que de la `VMware`
+
+Al arrastrarlo, tendremos que cambiar el nombre de la MV agregada
+
+![Screen Shot 2024-03-09 at 4.23.00 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_4.23.00_PM.png)
+
+simplemente hacemos referencias con los nombres que queramos
+
+![Screen Shot 2024-03-09 at 4.24.54 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_4.24.54_PM.png)
+
+Hemos abierto el `copy_3` que tiene como nombre `test`, y al entrar a el se ha modificado, entonces en este podemos testear mientras esperamos las evaluaciones.
+
+![Screen Shot 2024-03-09 at 4.27.41 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_4.27.41_PM.png)
+
+Guardar el resultado del `shasum` en el `.txt` en tu repositorio
+
+![Screen Shot 2024-03-09 at 4.33.26 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-09_at_4.33.26_PM.png)
+
+# **OTROS**
+
+> El comando **`head -n 2 /etc/os-release`** se utiliza en sistemas Linux para mostrar las primeras dos líneas del archivo **`/etc/os-release`**. Este archivo proporciona información sobre la distribución y la versión del sistema operativo en el que está instalado.
+> 
+
+![Screen Shot 2024-03-08 at 11.34.34 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_11.34.34_AM.png)
+
+> El comando **`/usr/sbin/aa-status`** se utiliza en sistemas Linux que tienen instalado el paquete AppArmor. Este comando se utiliza para verificar el estado actual de AppArmor, un sistema de seguridad de acceso obligatorio (MAC) para el control de acceso a programas.
+> 
+
+Cuando se ejecuta **`aa-status`**, proporciona información sobre el estado de los perfiles de AppArmor cargados, incluidos los perfiles activos, inactivos y no aplicados, así como también información sobre los procesos que están siendo gestionados por AppArmor.
+
+![Screen Shot 2024-03-08 at 11.33.33 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_11.33.33_AM.png)
+
+- La línea "apparmor module is loaded." indica que el módulo de AppArmor está cargado en el kernel del sistema, lo que significa que AppArmor está activo y funcionando.
+- Hay 7 perfiles de AppArmor cargados.
+- Todos los 7 perfiles están en modo de aplicación (enforce mode), lo que significa que se están aplicando restricciones de seguridad según lo definido por estos perfiles.
+- Se muestra una lista de los perfiles en modo de aplicación, que incluyen:
+    - **`/usr/lib/NetworkManager/nm-dhcp-client.action`**
+    - **`/usr/lib/NetworkManager/nm-dhcp-helper`**
+    - **`/usr/lib/connman/scripts/dhclient-script`**
+    - **`/sbin/dhclient`** y **`/usr/sbin/dhclient`**
+    - **`lsb_release`**
+    - **`nvidia_modprobe`** y **`nvidia_modprobe//kmod`**
+- No hay perfiles en modo de queja (complain mode) o en modo de matar (kill mode).
+- No hay perfiles en modo sin restricciones (unconfined mode).
+- Hay un proceso que tiene un perfil definido, que es **`/usr/sbin/dhclient`** y está en modo de aplicación (enforce mode).
+
+En resumen, este informe indica que AppArmor está activo y aplicando restricciones de seguridad a los procesos especificados por los perfiles cargados en el sistema.
+
+> El comando **`ss -tulp`** se utiliza para mostrar las conexiones de red y los puertos en escucha en un sistema Linux. Aquí está el significado de cada parte del comando:
+> 
+> - **`ss`**: Es una herramienta de línea de comandos utilizada para obtener información sobre las conexiones de red, los sockets y la tabla de enrutamiento en Linux.
+> - **`t`**: Este argumento indica que solo se mostrarán las conexiones TCP.
+> - **`u`**: Este argumento indica que solo se mostrarán las conexiones UDP.
+> - **`l`**: Este argumento indica que solo se mostrarán los puertos en escucha (listening ports).
+> - **`p`**: Este argumento muestra el proceso que está utilizando cada conexión o puerto.
+> 
+> Cuando ejecutas **`ss -tulp`**, obtendrás una lista de las conexiones TCP y los puertos en escucha, junto con el proceso que está utilizando cada uno de ellos.
+> 
+
+![Screen Shot 2024-03-08 at 11.36.47 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_11.36.47_AM.png)
+
+# **BONUS-PARTICIONES**
 
 Necesitamos que sea la opción manual para poder crear las particiones primarias, extendidas y lógicas. 
 
@@ -659,25 +786,25 @@ Descripción breve de todos los tipos de particiones:
 
 ◦ **Lógica:** Ocupa una porción de la partición extendida/primaria o la totalidad de la misma, la cual se ha formateado con un tipo específico de sistema de archivos (en nuestro caso usaremos ext4) y se le ha asignado una unidad, así el sistema operativo reconoce las particiones lógicas o su sistema de archivos. Puede haber un máximo de 23 particiones lógicas en una partición extendida, sin embargo, Linux, el SO con el que trabajamos actualmente, lo reduce a 15, más que suficientes para realizar este proyecto.
 
-![Screen Shot 2024-03-06 at 10.41.23 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.41.23_AM.png)
+![Screen Shot 2024-03-06 at 10.41.23 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.41.23_AM.png)
 
 Creamos el sd1 de tamaño 500M y tendremos que elegir la opción de localización para la nueva partición en 'Beginning' del disco. Modificamos el punto de montaje a que sea Boot y continuaremos
 
 Ahora debemos crear una partición lógica con todo el espacio disponible del disco (max), que no tenga punto de montaje y que esté encriptada (la extendida)
 
-![Screen Shot 2024-03-06 at 10.58.24 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.58.24_AM.png)
+![Screen Shot 2024-03-06 at 10.58.24 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.58.24_AM.png)
 
 Ahora pasaremos a encriptar los volumne tal como pide el subject:
 
-![Screen Shot 2024-03-06 at 10.52.53 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.52.53_AM.png)
+![Screen Shot 2024-03-06 at 10.52.53 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.52.53_AM.png)
 
 y tenemos que Crear el volumen encriptado, que en este caso es el no montado
 
-![Screen Shot 2024-03-06 at 10.55.49 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.55.49_AM.png)
+![Screen Shot 2024-03-06 at 10.55.49 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_10.55.49_AM.png)
 
 En este caso ya esta encriptado, si es la primera vex saldria ext4 y no crypto, pero se veria asi por primera vez
 
-![Screen Shot 2024-03-06 at 11.02.13 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.02.13_AM.png)
+![Screen Shot 2024-03-06 at 11.02.13 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.02.13_AM.png)
 
 Aceptamos el mensaje de confirmación. Nos comenta que se encriptara todo lo que hay dentro de la partición y que no debe tardar mucho en terminar. 
 
@@ -687,13 +814,13 @@ Pasamos a configurar los volumenes logicos
 
 Guardaremos los cambios realizados previamente, es como usar w
 
-![Screen Shot 2024-03-06 at 11.06.09 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.06.09_AM.png)
+![Screen Shot 2024-03-06 at 11.06.09 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.06.09_AM.png)
 
 podemos ver el proceso de los cambiios que vamos haciendo a los volumenes con la opcion de display
 
 En este caso, ya está encriptado. Si es la primera vez, aparecería ext4 y no crypto, pero se vería así por primera vez:
 
-![Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.02.13_AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.02.13_AM.png)
+![suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.02.13_AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.02.13_AM.png)
 
 Aceptamos el mensaje de confirmación. Nos indica que se encriptará todo lo que hay dentro de la partición y que no debería tardar mucho en terminar.
 
@@ -703,7 +830,7 @@ Pasamos a configurar los volúmenes lógicos.
 
 Guardaremos los cambios realizados previamente, es como usar w.
 
-![Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.06.09_AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.06.09_AM.png)
+![suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.06.09_AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.06.09_AM.png)
 
 Podemos ver el proceso de los cambios que vamos haciendo a los volúmenes con la opción de display.
 
@@ -711,13 +838,13 @@ Crearemos un nuevo grupo de volumen. Los grupos de volúmenes agrupan particione
 
 El *LVM* (*Gestor de volúmenes lógicos, Logical Volume Manager*) es una de mis funcionalidades preferidas en *Linux*.
 
-![Screen Shot 2024-03-06 at 11.12.38 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.12.38_AM.png)
+![Screen Shot 2024-03-06 at 11.12.38 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.12.38_AM.png)
 
 Entonces, creamos el volumen lógico. Seleccionamos el grupo con el nombre de 'root' y le añadimos un tamaño de 10G.
 
 Creamos otro volumen lógico con el mismo grupo con el nombre de swap de tamaño 2.3g
 
-![Screen Shot 2024-03-06 at 11.25.26 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.25.26_AM.png)
+![Screen Shot 2024-03-06 at 11.25.26 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.25.26_AM.png)
 
 Creamos otro volumen lógico con el mismo grupo con el nombre de ‘home’ de tamaño 5g
 
@@ -729,7 +856,7 @@ Creamos otro volumen lógico con el mismo grupo con el nombre de tmp de tamaño 
 
 Creamos otro volumen lógico con el mismo grupo con el nombre de var-log de tamaño 4g
 
-![Screen Shot 2024-03-06 at 11.31.25 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.31.25_AM.png)
+![Screen Shot 2024-03-06 at 11.31.25 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.31.25_AM.png)
 
 Resumen de lo que acabas de crear dando a Display
 
@@ -739,13 +866,13 @@ Primero, crearemos un nuevo grupo de volúmenes. Estos grupos agrupan particione
 
 El *LVM* (*Gestor de volúmenes lógicos, Logical Volume Manager*) es una de mis funcionalidades preferidas en *Linux*.
 
-![Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.12.38_AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.12.38_AM.png)
+![suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.12.38_AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.12.38_AM.png)
 
 A continuación, creamos el volumen lógico. Seleccionamos el grupo con el nombre 'root' y le asignamos un tamaño de 10G.
 
 Creamos otro volumen lógico en el mismo grupo con el nombre 'swap' y un tamaño de 2.3G.
 
-![Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.25.26_AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.25.26_AM.png)
+![suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.25.26_AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.25.26_AM.png)
 
 Creamos otros volúmenes lógicos en el mismo grupo con los siguientes nombres y tamaños:
 
@@ -755,7 +882,7 @@ Creamos otros volúmenes lógicos en el mismo grupo con los siguientes nombres y
 - 'tmp' con un tamaño de 3G
 - 'var-log' con un tamaño de 4G
 
-![Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.31.25_AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.31.25_AM.png)
+![suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.31.25_AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.31.25_AM.png)
 
 Para finalizar, puedes ver un resumen de lo que acabas de crear seleccionando "Display".
 
@@ -765,7 +892,7 @@ Debemos configurar todas para seleccionar el sistema de archivos que queremos y 
 
 Nos muestra la configuración de la partición. Debemos escoger un sistema de ficheros ya que actualmente no tiene. y tenemos que darle de tipo ext4
 
-![Screen Shot 2024-03-06 at 11.35.38 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.35.38_AM.png)
+![Screen Shot 2024-03-06 at 11.35.38 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.35.38_AM.png)
 
 Primero, seleccionamos "home" como el punto de montaje y luego hacemos clic en "Done".
 
@@ -780,10 +907,202 @@ Repetimos el proceso para los siguientes puntos de montaje:
 
 Después de seleccionar cada punto de montaje, hacemos clic en "Done".
 
-![Screen Shot 2024-03-06 at 11.47.18 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.47.18_AM.png)
+![Screen Shot 2024-03-06 at 11.47.18 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.47.18_AM.png)
 
 Acepta el mensaje y así se guardarán los cambios. Asegúrate de que todas las particiones quedan tal como se solicita.
 
-![Screen Shot 2024-03-06 at 11.47.37 AM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.47.37_AM.png)
+![Screen Shot 2024-03-06 at 11.47.37 AM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_11.47.37_AM.png)
 
 continuaremos con la instalación previa.
+
+# **Resumen**
+
+## Qué es una MV?
+
+Una máquina virtual es como una computadora dentro de otra computadora. Utiliza un programa especial para dividir los recursos de la computadora principal y crear un entorno separado donde puedes instalar y ejecutar diferentes sistemas operativos y programas. Es útil para probar software, ejecutar programas incompatibles o experimentar de forma segura sin afectar tu computadora principal.
+
+## Elección de S.O.
+
+Por recomendación, si no has manejado previamente alguna distribución de SO se recomenda Debian. En mi caso, no es la primera vez que instalo un SO distinto.
+
+## Proposito de la mv
+
+Las máquinas virtuales son entornos virtuales que permiten ejecutar múltiples sistemas operativos y aplicaciones en un solo hardware. Son útiles para optimizar recursos, consolidar infraestructuras y proporcionar seguridad a través del aislamiento de procesos.
+
+## Diferencias entre APT y APTITUDE .
+
+[README](https://blog.packagecloud.io/know-the-difference-between-apt-and-aptitude/#:~:text=Apt%20offers%20a%20command%2Dline,of%20all%20available%20official%20packages)  Advanced Packaging Tool
+
+- **Interfaz de usuario**: **`apt`** ofrece una interfaz de línea de comandos básica, mientras que **`aptitude`** ofrece una interfaz más visual e interactiva.
+- **Resolución de conflictos**: Cuando hay conflictos de paquetes, **`apt`** no resuelve el problema automáticamente, mientras que **`aptitude`** sugiere posibles soluciones para resolverlo.
+- **Registro de cambios**: **`aptitude`** puede mostrar interactivamente el registro de cambios de Debian para todos los paquetes disponibles.
+- **Facilidad de uso para principiantes**: **`aptitude`** es más amigable para los principiantes, ya que ofrece una capa de abstracción sobre los diferentes subcomandos, lo que puede resultar más fácil de manejar que **`apt`**, que requiere más conocimientos de línea de comandos y administración de sistemas Linux.
+
+## APPArmor
+
+[AppArmor](https://computernewage.com/2022/09/03/gnu-linux-apparmor-tutorial/#apparmor-introduccion) es un sistema de seguridad para Linux que controla el acceso de las aplicaciones a recursos del sistema, como archivos y puertos de red, mediante perfiles de seguridad. Ayuda a proteger contra vulnerabilidades y ataques. (**mecanismo de control de acceso**)
+
+## Comandos útiles:
+
+1. Interfaz gráfica
+    
+    Comprobar que no haya ninguna interfaz gráfica en uso. `ls /usr/bin/*session`
+    
+    ![Screen Shot 2024-03-08 at 3.07.03 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.07.03_PM.png)
+    
+2. Uso del UFW  uncomplicated Firewall
+    
+    Comprobar si el UFW esta activo. `sudo ufw status`
+    
+    ![Screen Shot 2024-03-08 at 3.10.56 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.10.56_PM.png)
+    
+    Comprobar el servicio del ufw
+    
+    ![Screen Shot 2024-03-08 at 3.12.51 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.12.51_PM.png)
+    
+3. SSH secure shell
+    
+    Necesitamos comprobar el status del [ssh](https://www.notion.so/suBorn2beRoot-21c033c4ebdf4c74b71f402b29b61b3d?pvs=21)  `sudo service ssh status` 
+    
+    ![Screen Shot 2024-03-08 at 3.25.18 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.25.18_PM.png)
+    
+4. Seguro que estas utilizando SO Debian?
+    
+    `uname -v` o `uname —kernel-version`
+    
+    ![Screen Shot 2024-03-08 at 3.27.45 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.27.45_PM.png)
+    
+5. Agregaste correctamente tu usuario al grupo **sudo** y **user42**?
+    
+    La palabra "getent" es una abreviatura de "get entries". En el contexto del comando **`getent`** en sistemas Unix y Unix-like, significa obtener las entradas o información de una base de datos del sistema. El comando se utiliza para recuperar información de bases de datos de sistemas como **`/etc/passwd`**, **`/etc/group`**, **`/etc/hosts`** y otros.
+    
+    Usa los comandos `getent group sudo` y `getent group user42`
+    
+    ![Screen Shot 2024-03-08 at 3.29.47 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.29.47_PM.png)
+    
+6. Te acuerdas de crear un user?
+    
+    `sudo adduser nameUser` y luego la contraseña requerida (con las políticas agregadas)
+    
+7. Te acuerdas de crear un grupo?
+    
+    `sudo addgroup evaluating`
+    
+8. Recuerdas cómo agregar el nuevo user al nuevo grupo?
+    
+    `sudo adduser nameUser evaluating`
+    
+    Comprobar el comando
+    
+    `getent group evaluating`
+    
+9. Obtener el nombre del hostname
+    
+    `hostname`
+    
+10. Modificar el hostname por otro nombre.
+    
+    Reemplazamos el nombre por el nuevo`sudo vim /etc/hostname`
+    
+    Reemplazamos nuevamente por el nuevo nombre `sudo vim /etc/hosts`
+    
+    usamos `sudo reboot`
+    
+    comprobamos los cambios usando `hostname`
+    
+11. Ver las particiones del SO
+    
+    `lsblk` podemos ver las particiones que tiene el disco
+    
+    Qué es [LVM](https://somebooks.es/que-es-lvm/)  (Administrador de Volúmenes Lógicos) en Linux permite combinar múltiples discos en un solo espacio de almacenamiento flexible. Esto se logra a través de tres elementos clave:
+    
+    1. **Volúmenes Físicos (PVs)**: Discos físicos o particiones.
+    2. **Grupos de Volúmenes (VGs)**: Agregación de PVs para crear un pool (grupo de V) de almacenamiento.
+    3. **Volúmenes Lógicos (LVs)**: Particiones virtuales creadas dentro de VGs, con flexibilidad para redimensionarlas dinámicamente.
+    
+    LVM ofrece beneficios como la capacidad de redimensionar volúmenes en tiempo real y crear instantáneas para copias de seguridad. Es una herramienta valiosa para la gestión eficiente y escalable del almacenamiento en sistemas Linux.
+    
+    <aside>
+    💡 **`dpkg`** es una herramienta de línea de comandos que permite instalar, configurar y gestionar paquetes de software en un sistema Debian. Permite instalar paquetes individuales, mostrar información sobre paquetes instalados, realizar actualizaciones y eliminar paquetes del sistema.
+    
+    </aside>
+    
+12. Tienes SUDO instalado?
+    
+    `sudo -V` `dpkg -s sudo`
+    
+    `which sudo` para ver donde esta instalado.
+    
+    ![Screen Shot 2024-03-08 at 3.54.39 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_3.54.39_PM.png)
+    
+13. Agregamos el nuevo user a sudo
+    
+    `sudo adduser nameUser sudo`
+    
+    para comprobarlo `getent group sudo`
+    
+14. Comprobamos las reglas del subject 
+    
+    usamos cat o vim. Yo lo he llamado sudo_config
+    
+    `vim /etc/sudoers.d/sudo_config`
+    
+15. El historial del uso del comando sudo
+    
+    Vamos al lugar con `cd /var/log/sudo` usamos `ls` y luego `cat sudo_config`
+    
+    ![Screen Shot 2024-03-08 at 4.04.52 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_4.04.52_PM.png)
+    
+    Usamos un comando con sudo y miramos el fichero
+    
+    ![Screen Shot 2024-03-08 at 4.06.02 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_4.06.02_PM.png)
+    
+    al usar el `cat sudo_config`
+    
+    ![Screen Shot 2024-03-08 at 4.06.30 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_4.06.30_PM.png)
+    
+16. Comprobamos el UFW y funciona
+    
+    `dpkg -s ufw`
+    
+    ![Screen Shot 2024-03-08 at 4.07.57 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_4.07.57_PM.png)
+    
+    `sudo service ufw status`
+    
+    ![Screen Shot 2024-03-08 at 4.11.00 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_4.11.00_PM.png)
+    
+17. Listar las reglas de UFW
+    
+    `sudo ufw status`
+    
+    ![Screen Shot 2024-03-08 at 4.11.24 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-08_at_4.11.24_PM.png)
+    
+18. Cómo creamos puertos y las eliminamos?
+    
+    `sudo ufw allow XXXX` para crear el puerto
+    
+    `sudo ufw status numered`  y luego `sudo ufw delete XXXX` para listar y eliminar el puerto
+    
+    `sudo ufw status` para ver los puertos
+    
+19. Comprobar el servicio de ssh esta bien y los puertos que piden
+    
+    `wich ssh`
+    
+    `sudo service ssh status`
+    
+20. Sabemos conectarnos por ssh con el nuevo user creado, y que no se pueda con el root
+    
+    `ssh -p 4242 newUser@tu_ip`
+    
+21. modificamos el script de 10 a 1
+    
+    `sudo crontab -u root -e` /1
+    
+22. Stop script
+    
+    `sudo /etc/init.d/cron stop`
+    
+    para volver a ejecutarse
+    
+    `sudo /etc/init.d/cron stop`
