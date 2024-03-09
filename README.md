@@ -62,7 +62,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
 17. Seleccionaremos `Yes` para instalar [GRUB boot](https://es.wikipedia.org/wiki/GNU_GRUB) en el disco duro.
 18. Escogeremos el dispositivo para la instalación del cargador de arranque `/dev/sda`.  A esperar. y le damos a `Continue`
 
-**Configuración de la máquina virtual ⚙️**
+**Configuración de la máquina virtual** 
 
 ➤  Lo primero que debemos hacer es seleccionar `Debian GNU/Linux`.
 
@@ -72,9 +72,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
 
 1. 
 
-**Ya tenemos todo listo para empezar a configurar nuestra máquina virtual Debian❗️**
-
-**Instalación de sudo y configuración de usuarios y grupos 👤**
+**Instalación de sudo y configuración de usuarios y grupos** 
 
 1. Para la instalación de sudo primero debemos estar en el usuario root, para ello pondremos `su` en el terminal e introduciremos la contraseña, en mi caso es `Hola42bcn-`. Una vez hemos accedido al usuario root, debemos poner el comando `apt install sudo` para así instalar los paquetes necesarios.
 2.  Debemos reiniciar la máquina para que se apliquen los cambios. Para ello haremos uso del comando `sudo reboot` y esperaremos a que se reinicie.
@@ -88,9 +86,9 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     
 5. Ahora deberemos crear un nuevo grupo llamado `user42`. Para crearlo debemos hacer `sudo addgroup user42`.
     
-    🧠 **Qué es GID❓** Es el identificador de grupo, es una abreviatura de Group 🆔.
+    **Qué es GID** Es el identificador de grupo, es una abreviatura de Group ID
     
-    🤔 **Se ha creado correctamente el grupo?** Lo cierto es que sí, ya que no ha habido ningún mensaje de error, aun así podemos comprobar si se ha creado con el comando `getent group nombre_grupo` o también podemos hacer `cat /etc/group` y podremos ver todos los grupos y los usuarios que hay dentro de ellos.
+     **Se ha creado correctamente el grupo?** Lo cierto es que sí, ya que no ha habido ningún mensaje de error, aun así podemos comprobar si se ha creado con el comando `getent group nombre_grupo` o también podemos hacer `cat /etc/group` y podremos ver todos los grupos y los usuarios que hay dentro de ellos.
     
     ![Screen Shot 2024-03-06 at 12.26.56 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.26.56_PM.png)
     
@@ -103,9 +101,9 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     ![Screen Shot 2024-03-06 at 12.32.07 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_12.32.07_PM.png)
     
 
- **Instalación y configuración SSH 📶**
+ **Instalación y configuración SSH** 
 
-🧠 **¿Qué es SSH❓** Es un protocolo y el programa que lo implementa. Su principal función es permitir el acceso remoto a un servidor a través de un canal seguro en el que toda la información se cifra.
+**Qué es SSH** Es un protocolo y el programa que lo implementa. Su principal función es permitir el acceso remoto a un servidor a través de un canal seguro en el que toda la información se cifra.
 
 1. Lo primero que haremos será ejecutar `sudo apt update` para actualizar los repositorios definidos en el archivo /etc/apt/sources.list.
 2. Instalaremos OpenSSH, la herramienta principal para la conectividad de inicio de sesión remoto con el protocolo SSH. Para instalarla, introduciremos el comando `sudo apt install openssh-server`. Cuando aparezca el mensaje de confirmación, escribiremos `Y` y luego esperaremos a que termine la instalación.
@@ -156,7 +154,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     ![Screen Shot 2024-03-06 at 1.31.55 PM.png](suBorn2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-06_at_1.31.55_PM.png)
     
 
-**Configurar contraseña fuerte para sudo 🔒**
+**Configurar contraseña fuerte para sudo** 
 
 1. Crearemos un fichero en la ruta /etc/sudoers.d/ a mi fichero yo le he decidido llamar sudo_config, ya que en ese fichero se almacenará la configuración de la contraseña. El comando exacto para crear el fichero es `touch /etc/sudoers.d/sudo_config`.
 2. Debemos crear el directorio sudo en la ruta /var/log porque cada comando que ejecutemos con sudo, tanto el input como el output, debe quedar almacenado en ese directorio. Para crearlo utilizaremos el comando `mkdir /var/log/sudo`.
@@ -216,7 +214,7 @@ Cancelamos, ya que el borrado de datos en el disco no es necesario.
     </aside>
     
 
-**Configuración de política de contraseñas fuerte  🔑**
+**Configuración de política de contraseñas fuerte**  
 
 1. El primer paso será editar el fichero `login.defs. vim /etc/ogin.defs`
 2.  Una vez estemos editando el fichero, modificaremos los siguientes parámetros:
