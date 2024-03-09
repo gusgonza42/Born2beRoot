@@ -59,6 +59,6 @@ wall "
 	- TCP Connections: $tcp_connections ESTABLISHED
 	- User Logins: $user_logins
 	- Network: IP $ip ($mac)
-	- Sudo Commands: $sudo_commands commands
+	- Sudo Commands: $sudo_commands cmd
 	================================
 "
