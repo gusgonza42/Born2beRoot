@@ -1026,7 +1026,7 @@ Las máquinas virtuales son entornos virtuales que permiten ejecutar múltiples 
     `sudo /etc/init.d/cron start`
     
 
-# CORRECCION
+# CORRECCIÓN
 
 ![Screen Shot 2024-03-11 at 12.01.32 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-11_at_12.01.32_PM.png)
 
@@ -1037,5 +1037,8 @@ Las máquinas virtuales son entornos virtuales que permiten ejecutar múltiples 
 ![Screen Shot 2024-03-11 at 12.02.53 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-11_at_12.02.53_PM.png)
 
 ![Screen Shot 2024-03-11 at 12.03.06 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-11_at_12.03.06_PM.png)
+
+# Estado
+[![Build Status](https://img.shields.io/static/v1?label=Build%20Status&message=110%20success&color=success)](https://github.com/yowcloud/Born2beRoot)
 
 [https://www.notion.so](https://www.notion.so)
