@@ -1,7 +1,6 @@
-<div align="center">
-	# Born2beRoot
-	
-	![icon b2br]([https://github.com/yowcloud/yow-myUtils/blob/main/ft_printf.png](https://raw.githubusercontent.com/yowcloud/yow-myUtils/main/ft_printf.png))
+<div align=center >
+<h1>ft_printf</h1>
+<img src="https://raw.githubusercontent.com/viruskizz/viruskizz-myutils/main/ft_printf_badge.png" alt="printft_badge" />
 </div>
 
 
