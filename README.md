@@ -1,7 +1,8 @@
-<div align=center >
-<h1>Born2beRoot</h1>
-<img src="[https://raw.githubusercontent.com/viruskizz/viruskizz-myutils/main/ft_printf_badge.png" alt="printft_badge](https://raw.githubusercontent.com/yowcloud/yow-myUtils/main/ft_printf.png)" />
+<div align="center">
+    <h1>Born2beRoot</h1>
+    <img src="https://raw.githubusercontent.com/viruskizz/viruskizz-myutils/main/ft_printf_badge.png" alt="printft_badge">
 </div>
+
 
 
 # [SUBJECT](https://github.com/yowcloud/Born2beRoot/blob/main/born2beroot_es.subject.pdf)
