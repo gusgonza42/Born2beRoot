@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Born2beRoot</h1>
-    <img src="https://github.com/yowcloud/yowcloud-my-utils/blob/main/badge_ft_printf_113px.png">
+    <img src="https://github.com/yowcloud/yowcloud-my-utils/blob/main/badge_ft_printf_500px.png" style="width: 150px; height: 150px;">
 </div>
 
 # [SUBJECT](https://github.com/yowcloud/Born2beRoot/blob/main/born2beroot_es.subject.pdf)
