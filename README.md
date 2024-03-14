@@ -3,7 +3,9 @@
     <img src="https://raw.githubusercontent.com/yowcloud/yowcloud-my-utils/main/badge_born2beroot_500px.png" style="width: 150px; height: 150px;">
 </div>
 # Status
+
 [![Build Status](https://img.shields.io/static/v1?label=Build%20Status&message=110%20success&color=success)](https://github.com/yowcloud/Born2beRoot)
+
 - - -
 # [SUBJECT](https://github.com/yowcloud/Born2beRoot/blob/main/born2beroot_es.subject.pdf)
 
