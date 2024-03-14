@@ -1,7 +1,8 @@
 <div align="center">
     <h1>Born2beRoot</h1>
-    <img src="https://raw.githubusercontent.com/yowcloud/yowcloud-my-utils/main/badge_ft_printf_150px.png">
+    <img src="https://raw.githubusercontent.com/yowcloud/yowcloud-my-utils/main/badge_ft_printf_150px.png" width="120" height="20">
 </div>
+
 
 
 
