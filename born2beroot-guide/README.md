@@ -1034,6 +1034,3 @@ Las máquinas virtuales son entornos virtuales que permiten ejecutar múltiples 
 
 ![Screen Shot 2024-03-11 at 12.03.06 PM.png](Born2beRoot%2021c033c4ebdf4c74b71f402b29b61b3d/Screen_Shot_2024-03-11_at_12.03.06_PM.png)
 
-
-
-[https://www.notion.so](https://www.notion.so)
