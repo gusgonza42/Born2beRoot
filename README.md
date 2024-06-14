@@ -20,7 +20,7 @@ Para obtener información más detallada, consulta el [**Subject**](https://gith
 
 ### Software
 
-- **Sistema Operativo**: Debian 10 o el mas reciente version LTS
+- **Sistema Operativo**: Debian la version  LTS en ese momento.
 - **Virtualización**: VirtualBox o VMware (el que este diponible en el campus)
 
 ### Conocimientos
