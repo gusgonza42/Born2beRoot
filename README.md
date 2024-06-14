@@ -33,7 +33,7 @@ Para obtener información más detallada, consulta el [**Subject**](https://gith
 
 ### 1. Preparación del Entorno
 
-Para este proyecto, he preparado una guía paso a paso que cubre la configuración completa de la máquina virtual, incluyendo la creación manual de particiones (parte del bonus) y todos los pasos del obligatorio. Puedes encontrar la guía detallada en el [PDF incluido en el repositorio](enlace_al_pdf).
+Para este proyecto, he preparado una guía paso a paso que cubre la configuración completa de la máquina virtual, incluyendo la creación manual de particiones (parte del bonus) y todos los pasos del obligatorio.
 
 ## Guía Paso a Paso
 
