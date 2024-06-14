@@ -8,10 +8,6 @@
 
 - - -
 
-
-
-# [SUBJECT](https://github.com/yowcloud/Born2beRoot/blob/main/born2beroot_es.subject.pdf)
-
 ## 💡 Acerca del Proyecto
 
 > _El objetivo de este proyecto es configurar y asegurar un servidor basado en Linux, proporcionando una introducción a la administración de sistemas y la seguridad informática._
@@ -41,7 +37,7 @@ Para este proyecto, he preparado una guía paso a paso que cubre la configuraci�
 
 ## Guía Paso a Paso
 
-- **Guía completa:** [Guía Paso a Paso](enlace_al_pdf)
+- **Guía completa:** [Guía Paso a Paso](https://github.com/gusgonza42/Born2beRoot/blob/main/born2beroot-guide/README.md)
 
 
 
